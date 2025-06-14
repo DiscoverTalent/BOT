@@ -1,0 +1,28 @@
+responses = {
+    "hi": "Hello! Welcome to Discover Talent Presents. How can I assist you with your learning journey today?",
+    "what is discover talent": "Discover Talent Presents is an educational platform offering expert-led sessions, courses, and student showcases. Learn more on our About page.",
+    "how to register": "You can register by visiting our website and clicking on the 'Register Now' button on the homepage.",
+    "upcoming events": "We regularly host webinars, workshops, and educational events. Check our Events page for the latest schedule.",
+    "student showcase": "Our student showcase features outstanding projects and talents. Visit the Showcase section to explore.",
+    "session timings": "Session times vary by topic and instructor. Please check your course dashboard or email confirmation for details.",
+    "technical issue": "Sorry to hear that! Please try refreshing your browser or contact support via the Help section.",
+    "certificate": "Yes, certificates are provided upon successful completion of a course or program.",
+    "contact": "You can reach us via the Contact page on our website or email us directly at support@discover-talent-presents.com.",
+    "bye": "Thank you for visiting Discover Talent Presents. Wishing you the best in your educational journey. Goodbye!"
+}
+
+def get_bot_response(user_input):
+    user_input = user_input.lower()
+    for keyword, response in responses.items():
+        if keyword in user_input:
+            return response
+    return "I'm not sure how to respond to that. Can you try asking something else about Discover Talent Presents?"
+
+while True:
+    user_input = input("You: ")
+    if user_input.lower() in ["quit", "exit", "bye"]:
+        print("Bot: Goodbye! If you have any more questions, we're here to help.")
+        break
+
+    response = get_bot_response(user_input)
+    print(f"Bot: {response}")
